@@ -1,0 +1,24 @@
+body {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img {
+    height: 500px;
+    width: 400px;
+}
+
+
+aside {
+    position: absolute;
+    right: 10vw;
+    top: 10vw;
+    width: 100px;
+}
+
+aside > div{
+    border: 1px solid black;
+    height: 100px;
+}
+
