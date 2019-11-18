@@ -5,10 +5,10 @@ const STORE = [
     {
         question: 'What is the meaning of "Valar Dohaeris," the Valyrian aphorism?',
         choices: [
-            'All men hunger for truth.',
+            'All men must suffer.',
             'All men must serve.',
             'All men must die.',
-            'All men are created equal.'
+            'All men are made in the image of God.'
         ],
         answer: 'All men must serve.'
     },
@@ -55,3 +55,7 @@ const STORE = [
 ];
 
 console.log(STORE);
+
+
+
+

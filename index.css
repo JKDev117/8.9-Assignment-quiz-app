@@ -1,24 +1,223 @@
+* {
+    box-sizing: border-box;
+    border: 1px solid black;
+    font-family: 'MedievalSharp', cursive;
+}
+
+main {
+    position: relative;
+}
+
+header{
+    height: 100px;
+    margin: 0 auto;
+}
+
+.logo {
+    top: 65px;
+    height: 90px;
+    width: 18%;
+    position: absolute;
+    left: 50%;
+    margin-left: -10%;
+}
+
+.bar {
+    background-color: rgb(77, 14, 14);
+    width: 49.75%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100px;
+    position: absolute;
+}
+
+#crown{
+    height: 115px;
+    width: 140px;
+    position: absolute;
+    left: 50%;
+    margin-left: -70px;
+    top: 0;
+}
+
+audio{
+    top: 0;
+    width: 100%;
+}
+
 body {
     width: 50%;
     margin-left: auto;
     margin-right: auto;
+    background-color: transparent;
+    padding-top: 50px;
+    background-image: url("images/990-game-of-thrones-game-of-thrones.jpg");
+    background-size: fill;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-img {
-    height: 500px;
-    width: 400px;
+.menu-bg {
+    top: 70px;
+    left: 0;
+    height:100%;
+    width: 100%;
+    position: absolute; 
 }
 
+#resultsImages{
+    position: relative;
+}
+
+#ygritte {
+    top: 80px;
+    left: 50%;
+    height:300px;
+    width: 300px;
+    margin-left: -150px;
+    position: absolute; 
+}
+
+.response-img {
+    top: 0;
+    left: 0;
+    height:400px;
+    width: 100%;
+    position: absolute; 
+}
+
+main{
+    text-align: center;
+    background-color: transparent;  
+}
+
+#start {
+    height: 400px;
+}
+
+#startButton {
+    height: 40px;
+    font-size: 50px;
+    margin-top: 250px;
+    z-index: 1;
+    text-shadow: 5px 5px 5px #362915;
+    color: whitesmoke;
+    background-color: transparent;
+    border: none;
+}
+
+
+legend{
+    position: relative;
+    bottom: 25vh;
+    margin: 0 auto;
+    font-size: 2.3em;
+    padding: 0;
+    color: whitesmoke;
+    text-shadow: 2px 2px 4px #492e05;
+    background-color: rgb(41, 32, 7, 0.5);
+}
+
+.answerChoice{
+    margin: 0 auto;
+    position: relative;
+    bottom:  12vh;
+    font-size: 1.8em;
+    line-height: 2;
+    color: rgb(252, 249, 247);
+    background-color: rgba(13, 19, 13, 0.5);
+}
+
+.store-span{
+    background-color: rgba(44, 39, 23, 0.6);
+}
+
+.button{
+    position: relative;
+    font-size: 1.5em;
+    bottom: 2vh;
+    background-color: rgb(10, 41, 23);
+    box-shadow: 7px 7px 7px #240f0f;
+}
+
+.submitButton{
+    position: relative;
+    font-size: 1.5em;
+    bottom: 12vh;
+    color: rgb(180, 204, 44);
+}
+
+.nextButton{
+    color: rgb(246, 240, 247);
+}
+
+
+.message.wrong {
+    position: relative;
+    font-size: 1.5em;
+    color: rgb(82, 13, 9);
+    background-color: rgba(182, 115, 98, 0.5);
+}
+
+.message.correct {
+    position: relative;
+    font-size: 1.5em;
+    color: rgb(20, 66, 10);
+    background-color: rgba(115, 182, 98, 0.5);
+}
+
+span.green {
+    color: green;
+    font-size: 1.35em;
+}
+
+span.red {
+    color: red;
+    font-size: 1.35em;
+
+}
 
 aside {
     position: absolute;
-    right: 10vw;
-    top: 10vw;
+    right: 5.5vw;
+    top: 12vw;
     width: 100px;
+    text-shadow: 2px 2px 4px #c49042;
+    text-align: center;
 }
 
 aside > div{
-    border: 1px solid black;
-    height: 100px;
+    height: 205px;
+    position: absolute;
+    left: 50%;
+    margin-left: -75px;
+    width: 150px;
+    top: 25px;
 }
+
+#scroll{
+    height: 205px;
+    position: absolute;
+    left: 50%;
+    margin-left: -75px;
+    width: 150px;
+    z-index: -1;
+}
+
+
+p.last{
+    color:rgb(223, 237, 243);
+    font-size: 3em;
+    position: relative;
+    bottom: 34vh;
+    background-color: rgba(32, 10, 4, 0.5);
+
+}
+
+#retakeQuizButton{
+    position: relative;
+    bottom: 7vh;
+    color: rgb(241, 250, 244);
+}
+
 

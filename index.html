@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link href="index.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=MedievalSharp&display=swap" rel="stylesheet">
         <script
             src="https://code.jquery.com/jquery-3.2.1.min.js"
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -16,28 +17,60 @@
 
     <body>
         <header>
-            <h1>Game of Thrones Quiz</h1>
+            <img src="images/crown.png" alt="crown" id="crown" />    
+            <div class="bar"></div>
+            <img src="images/Game-of-Thrones-logo-600x253.png" alt="logo" class="logo">
         </header>
 
+        <audio controls autoplay>
+                <!--
+                <source src=" https://www.televisiontunes.com/uploads/audio/Game%20of%20Thrones.mp3" type="audio/mpeg">                   
+                <source src=" https://www.televisiontunes.com/uploads/audio/Game%20of%20Thrones.ogg" type="audio/mpeg">
+                -->
+                 <source src="audio/Game of Thrones.mp3" type="audio/mpeg">                    
+                 Your browser does not support the audio element.
+        </audio>
+
         <main role="main">
+
             <section id="start" class="section">
-                <button class="button" id="startButton">Start Quiz</button>
+                    <button class="button" id="startButton">Start Quiz</button>
             </section>
-            
+                
             <section id="QNA" class="section"></section>
-            
-            <section id="feedback" class="section"></section>
-            
+                
+            <section id="feedback" class="section">
+            </section>
+                
             <section id="results" class="section"></section>
             
-            <aside>
-                <div>Q<span id="currentQ">1</span> of 5</div>  
-                <div><span id="currentScore">0</span> of 5 Correct</div>
-            </aside>
+            <section class="resultsImages">
+                <img src="images/Game-of-Thrones-Wallpaper-9.jpg" alt="menu-background-image" class="menu-bg">
+                <img src="images/200.gif" alt="ygritte" id="ygritte" class="response-img"/>
+                <img src="images/valar-dohaeris.gif" alt="valar-dohaeris" id="imagereply1" class="response-img">
+                <img src="images/i-am-the-king.gif" alt="i-am-the-king" id="imagereply2" class="response-img">
+                <img src="images/ice-sword-melt.gif" alt="ice-sword-melt" id="imagereply3" class="response-img">
+                <img src="images/when-you-play-got.gif" alt="when-you-play-got" id="imagereply4" class="response-img">
+                <img src="images/sound-like-a-bw.gif" alt="sound-like-a-bw" id="imagereply5" class="response-img">
+
+            </section>
         </main>
-        
+
+        <aside>
+            <div>
+                <p id="currentQ" class="aside">Question 1</p></br>  
+                <p id="currentScore" class="aside">0 of 5 Correct</p>
+            </div>        
+                <img src="images/8-2-scroll-png-clipart.png" id="scroll" alt="scroll" />
+        </aside>
+
         <script src="store.js"></script>
         <script src="index.js"></script>
     </body>
 
 </html>
+
+
+
+
+
