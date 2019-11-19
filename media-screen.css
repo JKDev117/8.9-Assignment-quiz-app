@@ -1,0 +1,12 @@
+@media screen and (max-width: 864px) {
+    .aside1 {
+        display: none;
+    }
+    .aside2 {
+        visibility: visible;
+    }
+}
+
+
+
+

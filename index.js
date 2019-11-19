@@ -7,7 +7,7 @@ let score = 0;
 let qNum = 1;
 
 
-//load 1st question & answer set, display score card, & submit button
+//load 1st question, answer set, score card, & submit button
 function startQuiz(){
     $('#startButton').click(function(){
         $('aside').show();
@@ -90,9 +90,11 @@ function rightAnswer(){
     i+=1; 
     qNum+=1;
     if(i<5){
-        $('#currentQ').text(`Question ${qNum}`);
+        $('#aside-span1').text(`${qNum}`);
+        $('#alt-aside-span1').text(`Q${qNum}`);
     };
-        $('#currentScore').text(`${score} of 5 Correct`);
+        $('#aside-span2').text(`${score} of 5`);
+        $('#alt-aside-span2').text(`${score} of 5 pts`);
 };
 
 //feedback for if the user's answer is incorrect
@@ -107,9 +109,11 @@ function wrongAnswer(){
     i+=1; 
     qNum+=1;
     if(i<5){
-        $('#currentQ').text(`Question ${qNum}`);
+        $('#aside-span1').text(`${qNum}`);
+        $('#alt-aside-span1').text(`Q${qNum}`);
     };
-        $('#currentScore').text(`${score} of 5 Correct`);
+        $('#aside-span2').text(`${score} of 5`);
+        $('#alt-aside-span2').text(`${score} of 5 pts`);
 };
 
 //how to process the next set of questions depending on where it is in its path
@@ -129,7 +133,7 @@ function nextQuestionPath(){
                         <button class="button" id='retakeQuizButton'>Retake Quiz</button>
                     <\div>
                 `);
-                //$('aside').hide(); //deleted code
+                $('aside').hide(); //deleted code
                 $('.set').remove();
             };
         });
@@ -152,7 +156,7 @@ function restartQuiz(){
 };
 
 
-/* functions to call when page is loaded ---------------------------------------- */
+/* functions to call when the page is loaded ---------------------------------------- */
 
 $('aside').hide();
 $('.response-img').hide();
