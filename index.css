@@ -78,49 +78,7 @@ body {
             position: absolute; 
         }
 
-
-/* Buttons -------------------------------------------------- */
-
-.button {
-    position: relative;
-    font-size: 1.5em;
-    bottom: 2vh;
-    background-color: rgb(10, 41, 23);
-    box-shadow: 7px 7px 7px #240f0f;
-}
-
-#startButton {
-    height: 40px;
-    font-size: 50px;
-    margin-top: 250px;
-    z-index: 1;
-    text-shadow: 5px 5px 5px #362915;
-    color: whitesmoke;
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
-    bottom: 8vh;
-}
-
-
-.submitButton {
-    position: relative;
-    font-size: 1.5em;
-    bottom: 12vh;
-    color: rgb(180, 204, 44);
-}
-
-.nextButton {
-    color: rgb(246, 240, 247);
-}
-
-#retakeQuizButton {
-    position: relative;
-    bottom: 7vh;
-    color: rgb(241, 250, 244);
-}
-
-/* MISC/Other -------------------------------------------------------- */
+/* Questions & Answers -------------------------------------------------------- */
 
 fieldset {
     border: none;
@@ -193,12 +151,11 @@ span.red {
 }
 
 #ygritte {
-    top: 80px;
-    left: 50%;
-    height:300px;
-    width: 300px;
-    margin-left: -150px;
-    position: absolute; 
+    top: 0;
+    left: 0;
+    height:400px;
+    width: 100%;
+    position: absolute;
 }
 
 .response-img {
@@ -207,6 +164,47 @@ span.red {
     height:400px;
     width: 100%;
     position: absolute; 
+}
+
+/* Buttons -------------------------------------------------- */
+
+.button {
+    position: relative;
+    font-size: 1.5em;
+    bottom: 2vh;
+    background-color: rgb(10, 41, 23);
+    box-shadow: 7px 7px 7px #240f0f;
+}
+
+#startButton {
+    height: 40px;
+    font-size: 50px;
+    margin-top: 250px;
+    z-index: 1;
+    text-shadow: 5px 5px 5px #362915;
+    color: whitesmoke;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    bottom: 8vh;
+}
+
+
+.submitButton {
+    position: relative;
+    font-size: 1.5em;
+    bottom: 12vh;
+    color: rgb(180, 204, 44);
+}
+
+.nextButton {
+    color: rgb(246, 240, 247);
+}
+
+#retakeQuizButton {
+    position: relative;
+    bottom: 7vh;
+    color: rgb(241, 250, 244);
 }
 
 

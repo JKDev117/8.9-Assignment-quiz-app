@@ -1,4 +1,4 @@
-@media screen and (max-width: 864px) {
+@media screen and (max-width: 870px) {
     .aside1 {
         display: none;
     }
@@ -8,5 +8,38 @@
 }
 
 
+@media screen and (max-width: 414px) {
+    
+    legend { /* element from js, questions */
+        bottom: 30vh;
+        right: 10px;
+        font-size: 1.8em;
+    }
+    
+    .answerChoice { /* div from js, answer choices */
+        bottom:  22vh;
+        font-size: 1.2em;
+    }
+    
+    #startButton {
+        bottom: 12vh;
+    }
 
+    .submitButton {
+        bottom: 20vh;
+    }
 
+    .nextButton {
+        color: rgb(246, 240, 247);
+        bottom: 0vh;
+    }
+
+    #retakeQuizButton {
+        bottom: 27vh;
+    }
+
+    .aside2 {
+        margin-left: -117px;
+    }
+
+}    
