@@ -6,6 +6,14 @@ const total = STORE.length;
 let score = 0;
 let qNum = 1;
 
+//array to store html code for images
+const array = [
+    '<img src="images/tyrion-dancing.gif" alt="tyrion-dancing" class="correct-response-image">',
+    '<img src="images/tywin-jaime.gif" alt="tywin-jaime-gif" class="correct-response-image">',
+    '<img src="images/jaime-lannister-giving-thanks.gif" alt="ice-sword" class="correct-response-image">',
+    '<img src="images/cersei-lannister.gif" alt="cersei-lannister-gif" class="correct-response-image">',
+    '<img src="images/brienne.gif" alt="brienne-of-tarth" class="correct-response-image">',
+];
 
 //load 1st question, answer set, score card, & submit button
 function startQuiz(){
@@ -17,41 +25,41 @@ function startQuiz(){
     });
 };
 
-//to load up the questions
+//function to load up the questions
 function loadQuestions(){
     $('#QNA').append(`
     <form>
         <fieldset>
             <legend>${STORE[i].question}</legend>
     
-            <div class="answerChoice">    
+            <div class="answerChoices">    
                 <label for="${STORE[i].choices[0]}"></label>  
                 <input type="radio" name="radio" value="${STORE[i].choices[0]}" required>
                 <span class="store-span">${STORE[i].choices[0]}</span>
             </div>
-            <div class="answerChoice">    
+            <div class="answerChoices">    
                 <label for="${STORE[i].choices[1]}"></label>  
                 <input type="radio" name="radio" value="${STORE[i].choices[1]}" required>
                 <span class="store-span">${STORE[i].choices[1]}</span>
             </div>
-            <div class="answerChoice">    
+            <div class="answerChoices">    
                 <label for="${STORE[i].choices[2]}"></label>  
                 <input type="radio" name="radio" value="${STORE[i].choices[2]}" required>
                 <span class="store-span">${STORE[i].choices[2]}</span>
             </div>
-            <div class="answerChoice">    
+            <div class="answerChoices">    
                 <label for="${STORE[i].choices[3]}"></label>  
                 <input type="radio" name="radio" value="${STORE[i].choices[3]}" required>
                 <span class="store-span">${STORE[i].choices[3]}</span>
             </div>
-
         </fieldset>
+
         <button class="submitButton button">Submit</button>
     </form>`
     );
 };
 
-//to handle the user input
+//function to handle the user's input
 function handleAnswer(){
     $('#QNA').submit(function(event) {
         event.preventDefault();
@@ -63,11 +71,11 @@ function handleAnswer(){
             rightAnswer();
         } else {
             wrongAnswer();
-        };
+        }
     });
 };
 
-//feedback for if the user's answer is correct
+//function to handle feedback if the user's answer is correct
 function rightAnswer(){
     $('#feedback').append(`
         <div class="set">
@@ -76,15 +84,25 @@ function rightAnswer(){
         </div>    
     `);
     if(qNum==1){
-        $('#imagereply1').show();
+        $('.set').append(`
+            ${array[i]}
+        `);  
     } else if(qNum==2){
-        $('#imagereply2').show();
+        $('.set').append(`
+            ${array[i]}
+        `); 
     } else if (qNum==3){
-        $('#imagereply3').show();
+        $('.set').append(`
+            ${array[i]}
+        `); 
     } else if (qNum==4){
-        $('#imagereply4').show();
+        $('.set').append(`
+            ${array[i]}
+        `); 
     } else {
-        $('#imagereply5').show();
+        $('.set').append(`
+            ${array[i]}
+        `); 
     };
     score+=1; 
     i+=1; 
@@ -97,15 +115,15 @@ function rightAnswer(){
         $('#alt-aside-span2').text(`${score} of 5 pts`);
 };
 
-//feedback for if the user's answer is incorrect
+//function to handle feedback if the user's answer is incorrect
 function wrongAnswer(){
     $('#feedback').append(`
         <div class="set">
             <p class="message wrong"><span class="red">Incorrect.</span></br> The correct answer is "${STORE[i].answer}"<\p>
+            <img src="images/ygritte.gif" alt="ygritte" id="ygritte" class="response-img"/>
             <button class="nextButton button">Next >></button>
         </div>    
     `);
-    $('#ygritte').show();
     i+=1; 
     qNum+=1;
     if(i<5){
@@ -116,37 +134,40 @@ function wrongAnswer(){
         $('#alt-aside-span2').text(`${score} of 5 pts`);
 };
 
-//how to process the next set of questions depending on where it is in its path
+//function to process the next set of questions depending on where the user is in terms of question number
 function nextQuestionPath(){
-        $('#feedback').click(function(){
-            $('aside').show();
-            $('.response-img').hide();
-            if(i<5){
-                $('.set').remove(); //removes the feedback
-                $('form').remove(); //removes previous form
-                loadQuestions(); //loads next set of questions
-                $('#QNA').show(); //shows the questions
-            } else {
-                $('#results').append(`
-                    <div class="final">
-                        <p class="message last">${score} out of 5</br> is your final score.<\p>
-                        <button class="button" id='retakeQuizButton'>Retake Quiz</button>
-                    <\div>
-                `);
-                $('aside').hide(); //deleted code
-                $('.set').remove();
-            };
-        });
+    $('#feedback').click(function(){
+        $('aside').show();
+        $('.response-vid').hide();
+        $('.response-img').hide();
+        if(i<5){
+            $('.set').remove(); //removes the feedback
+            $('form').remove(); //removes previous form
+            loadQuestions(); //loads next set of questions
+            $('#QNA').show(); //shows the questions
+        } else {
+            $('#results').append(`
+                <div class="final">
+                    <p class="message last">You got ${score} out of 5</br> correct.<\p>
+                    <button class="button" id='retakeQuizButton'>Retake Quiz</button>
+                <\div>
+            `);
+            $('aside').hide();
+            $('.set').remove();
+        };
+    });
 };
 
-//process to restart the quiz
+//function to restart the quiz
 function restartQuiz(){
     $('#results').click(function(){
         i=0;
         score=0;
         qNum=1;
         $('#currentQ').text(`Question ${qNum}`);
-        $('#currentScore').text(`${score} of 5 Correct`);
+        $('#currentScore').text(`${score} of 5`);
+        $('#alt-aside-span1').text(`Q${qNum}`);  
+        $('#alt-aside-span2').text(`${score} of 5 pts`);
         $('form').remove();
         $('.final').remove();
         $('#QNA').show();
@@ -155,11 +176,9 @@ function restartQuiz(){
     });
 };
 
-
-/* functions to call when the page is loaded ---------------------------------------- */
+/* functions to call when the web page is loaded ---------------------------------------- */
 
 $('aside').hide();
-$('.response-img').hide();
 
 function start(){
     startQuiz();
@@ -169,13 +188,6 @@ function start(){
 };
 
 $(start);
-
-
-
-
-
-
-
 
 
 
