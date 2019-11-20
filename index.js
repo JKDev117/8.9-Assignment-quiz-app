@@ -136,7 +136,7 @@ function wrongAnswer(){
 
 //function to process the next set of questions depending on where the user is in terms of question number
 function nextQuestionPath(){
-    $('#feedback').click(function(){
+    $('#feedback').on('click', '.nextButton', function(){
         $('aside').show();
         $('.response-vid').hide();
         $('.response-img').hide();
@@ -156,11 +156,11 @@ function nextQuestionPath(){
             $('.set').remove();
         };
     });
-};
+};                               
 
 //function to restart the quiz
 function restartQuiz(){
-    $('#results').click(function(){
+    $('#results').on('click', '#retakeQuizButton', (function(){
         i=0;
         score=0;
         qNum=1;
@@ -173,7 +173,7 @@ function restartQuiz(){
         $('#QNA').show();
         $('aside').show();
         loadQuestions();
-    });
+    }));
 };
 
 /* functions to call when the web page is loaded ---------------------------------------- */
