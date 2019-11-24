@@ -31,7 +31,6 @@
     
     #submitButton {
         font-size: 2em;
-        width: 120px;
         height: 48px;
     }
 
@@ -42,7 +41,6 @@
 
     #nextButton {
         font-size: 2em;
-        width: 130px;
         height: 48px;
     }
 
@@ -57,7 +55,6 @@
     
     #retakeQuizButton {
         font-size: 2.8em;
-        width: 180px;
         height: 110px;
         margin-top: 0;
     }
@@ -112,7 +109,6 @@
 
     #nextButton {
         font-size: 3em;
-        width: 180px;
         height: 58px;
     }
 
@@ -142,7 +138,6 @@
 
     #submitButton {
         font-size: 2.5em;
-        width: 150px;
         height: 55px;
     }
 
@@ -154,7 +149,6 @@
 
     #nextButton {
         font-size: 3.5em;
-        width: 220px;
         height: 70px;
     }
 

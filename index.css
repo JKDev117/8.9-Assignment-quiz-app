@@ -76,7 +76,7 @@ main {
 }
 
 #startButton {
-    height: 40px;
+    height: 150px;
     font-size: 50px;
     text-shadow: 5px 5px 5px #362915;
     color: whitesmoke;
@@ -152,7 +152,7 @@ legend { /* element from js, questions */
 
 .answerChoices { 
     margin: 0 auto;
-    font-size: 1.2em;
+    font-size: 1.4em;
     line-height: 2;
     color: rgb(252, 249, 247);
     background-color: rgba(13, 19, 13, 0.5);
@@ -171,7 +171,6 @@ label:hover{
     font-size: 1.5em;
     color: white;
     border: black;
-    width: 100px;
     height: 40px;
     cursor: pointer;
     margin: 5% 0 7%;
@@ -214,7 +213,6 @@ span.green {
     border: black;
     cursor: pointer;
     margin: 5% 0 7%;
-
 }
 
 #nextButton:hover{
@@ -253,7 +251,6 @@ p.last {
     color: rgb(241, 250, 244);
     font-size: 1.8em;
     border: 1px solid black;
-    width: 100px;
     cursor: pointer;
     margin-top: 10%;
     margin-bottom: 35%;
