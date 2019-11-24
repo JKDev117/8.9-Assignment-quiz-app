@@ -43,7 +43,7 @@ const STORE = [
         answer: 'Cersei Lannister'
     },
     {
-        question: 'Who said this memorable line:"You sound like a bloody woman."',
+        question: 'Who said this memorable line: "You sound like a bloody woman."',
         choices: [
             'Brienne of Tarth',
             'Sandor "The Hound" Clegane',

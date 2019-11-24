@@ -4,141 +4,73 @@
 }
 
 body {
-    width: 60%;
+    width: 85%;
+    height: 100vh;
     margin-left: auto;
     margin-right: auto;
     background-color: transparent;
     padding-top: 50px;
     background-image: url("images/990-game-of-thrones-game-of-thrones.jpg");
-    background-size: fill;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 /* --------------------------------------------------------------*/
 
-.aside1 { /* right scroll section */
-    visibility: hidden;
-    position: absolute;
-    right: 6%;
-    top: 12vw;
-    width: 63px;
-    text-shadow: 2px 2px 4px #c49042;
-    text-align: center;
-}
-
-    .aside1 > div { /* div containing #currentQ & #currentScore */
-        height: 205px;
-        position: absolute;
-        left: 50%;
-        margin-left: -75px;
-        width: 150px;
-        top: 35px;
-        font-size: 1.5em;
-    }
-
-    .aside1 > div > p { /* #currentQ & #currentScore */
-        margin: 5px 0 0 0;
-    }
-
-    #scroll {
-        height: 210px;
-        position: absolute;
-        left: 50%;
-        margin-left: -75px;
-        width: 150px;
-        z-index: -1;
-    }
-
-
-.aside2 { /* middle scroll section */
-    position: absolute;
-    top: 0;
-    left: 50%;
-    margin-left: -110px;
-    z-index: 1;
-    visibility: show;
-}
-
-.aside2 > div {
-    position: relative;
-    top: 21vh;
-}
-    .aside2 > div > div{ /* This is the div container for the 2 spans (e.g.) Q1 & 0 of 5 pts */
-        position: absolute;
-        left: 40px;
-        top: 20px;
-        width: 220px;
-        font-size: 1.5em;
-    }
-
-    #alt-aside-span1{ /* this is the span for (e.g.) Q1 */ 
-        border: 1px solid rgba(0, 0, 0, 0.4);
-        border-radius: 5px;
-        color: rgba(0, 0, 0, 0.7);
-    }
-
-    .aside2 > div > div > span:nth-child(2){ /* this is the span for (e.g.) 0 of 5 pts */ 
-        color: rgb(187, 81, 20);
-        font-weight: bold;
-    }
-
-#alt-scroll{
-    position: absolute;
-    left: 0;
-    z-index: -1;
-    height: 70px;
-    width: 218px;
-}
-
 header {
     height: 160px;
     margin: 0 auto;
     background-color: rgb(61, 17, 17);
     border: outset 2px  rgb(41, 4, 4);
+    position: relative;
+    text-align: center;
 }
-    header:first-child{
-        position: relative;
-    }
-        #crown {
-            height: 115px;
-            width: 120px;
-            position: absolute;
-            left: 50%;
-            margin-left: -60px;
-            top: 0;
-            opacity: 0.4;
-            
-        }
-        #logo {
-            top: 5px;
-            height: 90px;
-            width: 58%;
-            position: absolute;
-            left: 50%;
-            margin-left: -29%;
-        }
+    
+#crown {
+    height: 115px;
+    width: 30%;
+    opacity: 0.4;
+}
 
-    audio {
-        position: absolute;
-        width: 100%;
-        bottom: 0;
-    }
+#logo {
+    left: 50%;
+    top: 10%;
+    height: 90px;
+    width: 60%;
+    position: absolute;
+    margin-left: -30%;
+}
 
-    main {
-        position: relative;
-        text-align: center;
-        border: 2px rgb(48, 3, 3, 0.8);
-        border-radius: 0 0 10px 10px;
-        border-style: none double double;
-    }
+audio {
+    width: 100%;
+}
 
-/* #start ----------------------------------------------------------*/
+
+/* --------------------------------------------------------------*/
+
+main {
+    text-align: center;
+    border: 2px rgb(48, 3, 3, 0.8);
+    border-radius: 0 0 10px 10px;
+    border-style: none double double;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Start Menu ----------------------------------------------------------*/
+
+#start {
+    height: 400px;
+    position: relative;
+}
+
+.menu-bg { 
+    height:100%;
+    width: 100%;
+}
 
 .button {
-    position: relative;
-    font-size: 1.5em;
-    bottom: 2vh;
     background-color: rgb(10, 41, 23);
     box-shadow: 7px 7px 7px #240f0f;
 }
@@ -146,52 +78,71 @@ header {
 #startButton {
     height: 40px;
     font-size: 50px;
-    margin-top: 250px;
-    z-index: 1;
     text-shadow: 5px 5px 5px #362915;
     color: whitesmoke;
     background-color: transparent;
     border: none;
     box-shadow: none;
-    bottom: 11vh;
-}
-
-#start {
-    height: 400px;
-}
-
-.menu-bg { 
-    left: 0;
-    height:100%;
-    width: 100%;
-    position: absolute; 
-}
-
-/* #QNA ----------------------------------------------------------*/
-
-.submitButton {
+    cursor: pointer;
     position: absolute;
-    font-size: 1.5em;
-    bottom: 1vh;
-    color: rgb(180, 204, 44);
+    width: 60%;
+    margin-left: -30%;
     left: 50%;
-    margin-left: -50px; 
-    border: black;
-    width: 100px;
-    height: 40px;
+    top: 31%;
 }
+
+#startButton:hover{
+    color: orange;
+}
+
+/* QNA --------------------------------------------------------------*/
+
+.scorecard1 { /* middle scroll section */
+    visibility: show;
+    font-size: 1.3em;
+}
+
+.scorecard1 > div {
+    position: relative;
+}
+
+.scorecard1 > div > div { /* This is the div container for the 2 spans (e.g.) Q1 & 0 of 5 pts */
+    position: absolute;
+    left: 50%;
+    width: 100%;
+    margin-left: -50%;
+    top: 32%;
+}
+
+#scroll{
+    z-index: -1;
+    height: 70px;
+    width: 218px;
+    display: block;
+    margin: 0 auto;
+}
+
+
+#q-span { /* this is the span for (e.g.) Q1 */ 
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+#score-span { /* this is the span for (e.g.) 0 of 5 pts */ 
+    color: rgb(187, 81, 20);
+    font-weight: bold;
+}
+
+/* ----------------------------------------------------------*/
 
 fieldset {
     border: none;
 }
 
 legend { /* element from js, questions */
-    position: absolute;
-    top: 10vh;
-    left: 50%;
-    width: 50vw;
-    margin-left: -25vw;
-    font-size: 1.3em;
+    margin: 0.5em auto 1.5em;
+    font-size: 1.4em;
     color: whitesmoke;
     text-shadow: 2px 2px 4px #492e05;
     background-color: rgb(41, 32, 7, 0.5);
@@ -201,26 +152,41 @@ legend { /* element from js, questions */
 
 .answerChoices { 
     margin: 0 auto;
-    position: relative;
-    bottom:  5vh;
-    font-size: 1.35em;
+    font-size: 1.2em;
     line-height: 2;
     color: rgb(252, 249, 247);
     background-color: rgba(13, 19, 13, 0.5);
     border: 1px solid rgba(0, 0, 0, 0.4);
 }
 
-.store-span { 
-    background-color: rgba(44, 39, 23, 0.6);
+label {
+    cursor: pointer;
 }
 
-/* #feedback ----------------------------------------------------------*/
+label:hover{
+    color: goldenrod;
+}
 
-.message.correct {
-    bottom: 35vh;
+#submitButton {
+    font-size: 1.5em;
+    color: white;
+    border: black;
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+    margin: 5% 0 7%;
+}
+
+#submitButton:hover{
+    color: rgb(180, 204, 44);
+}
+
+/* Feedback ----------------------------------------------------------*/
+
+
+.correct {
     width: 100%;
-    position: relative;
-    font-size: 1.8em;
+    font-size: 1.7em;
     color: rgb(40, 75, 16);
     background-color: rgba(115, 182, 98, 0.5);
     border: 1px solid black;
@@ -234,18 +200,29 @@ span.green {
 				 1px -1px 0 #000;
 }
 
-#feedback > div > img { /* correct response image */
-    position: relative;
-    bottom: 25vh;
-    z-index: -1;
+.response-img {
     width: 100%;
-    height: 300px;
+    height: 220px;
+    padding: 1em;
 }
 
-.message.wrong {
-    bottom: 35vh;
+#nextButton {
+    color: rgb(246, 240, 247);
+    font-size: 2.0em;
+    opacity: 0.8;
+    height: 50px;
+    border: black;
+    cursor: pointer;
+    margin: 5% 0 7%;
+
+}
+
+#nextButton:hover{
+    color: rgb(180, 204, 44);
+}
+
+.wrong {
     width: 100%;
-    position: relative;
     font-size: 1.8em;
     color: rgb(82, 13, 9);
     background-color: rgba(182, 115, 98, 0.5);
@@ -260,67 +237,68 @@ span.red {
 				 1px -1px 0 #000;
 }
 
-#ygritte {
-    position: absolute;
-    top: 38vh;
-    width: 100%;
-    height: 400px;
-    left: 50%;
-    margin-left: -50%;
 
-}
 
-.nextButton {
-    color: rgb(246, 240, 247);
-    font-size: 2.0em;
-    bottom: -40px;
-    opacity: 0.8;
-    height: 50px;
-    border: black;
-}
-
-/* #results ----------------------------------------------------------*/
+/* Results ----------------------------------------------------------*/
 
 p.last {
     color:rgb(223, 237, 243);
-    font-size: 1.9em;
-    position: relative;
-    bottom: 30vh;
+    font-size: 2.3em;
     background: linear-gradient(to right, rgba(58, 6, 6, 0.8), rgb(5, 31, 66));
     max-width: 60%;
-    left: 50%;
-    margin-left: -30%
+    margin: 20% auto;
 }
 
 #retakeQuizButton {
-    position: relative;
-    bottom: 25vh;
     color: rgb(241, 250, 244);
     font-size: 1.8em;
     border: 1px solid black;
     width: 100px;
+    cursor: pointer;
+    margin-top: 10%;
+    margin-bottom: 35%;
 }
 
-/* .resultsImages ----------------------------------------------------------*/
-
-#resultsImages {
-    position: relative;
+#retakeQuizButton:hover{
+    color: rgb(180, 204, 44);
 }
 
-.response-img {
-    top: 0;
-    left: 0;
-    height:400px;
-    width: 100%;
-    position: absolute; 
+
+/* --------------------------------------------------------------*/
+
+aside { /* right scroll section */
+    visibility: hidden;
+    position: absolute;
+    right: 6%;
+    top: 12vw;
+    width: 63px;
+    text-shadow: 2px 2px 4px #c49042;
+    text-align: center;
 }
 
-.response-vid {
-    top: 0;
-    left: 0;
-    height:400px;
-    width: 100%;
-    position: absolute; 
+aside > div { /* div containing #currentQ & #currentScore */
+    height: 205px;
+    position: absolute;
+    left: 50%;
+    margin-left: -75px;
+    width: 150px;
+    top: 1.8em;
+    font-size: 1.5em;
+    line-height: 0.9em;
+}
+
+aside > div > p { /* #currentQ & #currentScore */
+    margin: 5px 0 0 0;
+}
+
+
+#alt-scroll {
+    height: 225px;
+    position: absolute;
+    left: 50%;
+    margin-left: -75px;
+    width: 150px;
+    z-index: -1;
 }
 
 
