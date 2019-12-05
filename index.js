@@ -1,10 +1,14 @@
 'use strict'
 
-//global variables
-let i=0;
 const total = STORE.length;
-let score = 0;
-let qNum = 1;
+
+//global namespace variable
+const myApplication = {
+  i: 0,
+  score: 0,
+  qNum: 1,
+  total: 0,
+};
 
 //array to store html code for images
 const array = [
@@ -14,6 +18,8 @@ const array = [
     '<img src="images/cersei-lannister.gif" alt="cersei-lannister-gif" class="correct-response-image response-img">',
     '<img src="images/brienne.gif" alt="brienne-of-tarth" class="correct-response-image response-img">',
 ];
+
+/* ---------------------------------------------------------------- */
 
 //load 1st question, answer set, score card, & submit button
 function startQuiz(){
@@ -30,30 +36,30 @@ function loadQuestions(){
     $('.sections').append(`
     <form>
         <fieldset>
-            <legend>${STORE[i].question}</legend>
+            <legend>${STORE[myApplication.i].question}</legend>
     
             <div class="answerChoices">    
                 <label>
-                    <input type="radio" name="radio" value="${STORE[i].choices[0]}" required>
-                    ${STORE[i].choices[0]}
+                    <input type="radio" name="radio" value="${STORE[myApplication.i].choices[0]}" required>
+                    ${STORE[myApplication.i].choices[0]}
                 </label>   
             </div>
             <div class="answerChoices">    
                 <label>
-                    <input type="radio" name="radio" value="${STORE[i].choices[1]}" required>
-                    ${STORE[i].choices[1]}
+                    <input type="radio" name="radio" value="${STORE[myApplication.i].choices[1]}" required>
+                    ${STORE[myApplication.i].choices[1]}
                 </label>  
             </div>
             <div class="answerChoices">    
                 <label>
-                    <input type="radio" name="radio" value="${STORE[i].choices[2]}" required>
-                    ${STORE[i].choices[2]}
+                    <input type="radio" name="radio" value="${STORE[myApplication.i].choices[2]}" required>
+                    ${STORE[myApplication.i].choices[2]}
                 </label>  
             </div>
             <div class="answerChoices">    
                 <label>
-                    <input type="radio" name="radio" value="${STORE[i].choices[3]}" required>
-                    ${STORE[i].choices[3]}
+                    <input type="radio" name="radio" value="${STORE[myApplication.i].choices[3]}" required>
+                    ${STORE[myApplication.i].choices[3]}
                 </label>  
             </div>
         </fieldset>
@@ -67,7 +73,7 @@ function handleAnswer(){
     $('.sections').submit(function(){
         event.preventDefault();
         let choice=$("input:checked").val();
-        let correctAnswer=STORE[i].answer;
+        let correctAnswer=STORE[myApplication.i].answer;
         $('form').remove();
         $('.scorecard1').hide();
         $('aside').hide();
@@ -83,20 +89,23 @@ function handleAnswer(){
 function rightAnswer(){
     $('.sections').append(`
         <div class="set">
-            <p class="message correct"><span class="green">You got it right.</span></br> The correct answer is "${STORE[i].answer}"<\p>
-            <div>${array[i]}</div>
+            <p class="message correct"><span class="green">You got it right.</span></br> The correct answer is "${STORE[myApplication.i].answer}"<\p>
+            <div>${array[myApplication.i]}</div>
             <button id="nextButton" class="button">Next >></button>
         </div>    
         `);
-    score+=1; 
+    /*score+=1; 
     i+=1; 
-    qNum+=1;
-    if(i<5){
-        $('#q-span').text(`Q${qNum}`);
-        $('#score-span').text(`${score} of 5 pts`);
+    qNum+=1;*/
+    myApplication.i +=1;
+    myApplication.qNum +=1;
+    myApplication.score+=1;
+    if(myApplication.i<5){
+        $('#q-span').text(`Q${myApplication.qNum}`);
+        $('#score-span').text(`${myApplication.score} of 5 pts`);
 
-        $('#alt-q-span').text(`${qNum}`);
-        $('#alt-score-span').text(`${score} of 5`);
+        $('#alt-q-span').text(`${myApplication.qNum}`);
+        $('#alt-score-span').text(`${myApplication.score} of 5`);
     }    
 };
 
@@ -104,19 +113,19 @@ function rightAnswer(){
 function wrongAnswer(){
     $('.sections').append(`
         <div class="set">
-            <p class="message wrong"><span class="red">Incorrect.</span></br> The correct answer is "${STORE[i].answer}"<\p>
+            <p class="message wrong"><span class="red">Incorrect.</span></br> The correct answer is "${STORE[myApplication.i].answer}"<\p>
             <div><img src="images/ygritte.gif" alt="ygritte" id="ygritte" class="response-img"/></div>
             <button id="nextButton" class="button">Next >></button>
         </div>    
     `);
-    i+=1; 
-    qNum+=1;
-    if(i<5){
-        $('#q-span').text(`Q${qNum}`);
-        $('#score-span').text(`${score} of 5 pts`);
+    myApplication.i+=1; 
+    myApplication.qNum+=1;
+    if(myApplication.i<5){
+        $('#q-span').text(`Q${myApplication.qNum}`);
+        $('#score-span').text(`${myApplication.score} of 5 pts`);
 
-        $('#alt-q-span').text(`${qNum}`);
-        $('#alt-score-span').text(`${score} of 5`);
+        $('#alt-q-span').text(`${myApplication.qNum}`);
+        $('#alt-score-span').text(`${myApplication.score} of 5`);
     }
 };
 
@@ -126,13 +135,13 @@ function nextQuestionPath(){
         $('.set').remove();
         $('.scorecard1').show();
         $('aside').show();
-        if(i<5){
+        if(myApplication.i<5){
             loadQuestions();
         } else {
             $('.set').remove();
             $('.sections').append(`
                 <div class="final">
-                    <p class="message last">You got ${score} out of 5</br> correct.<\p>
+                    <p class="message last">You got ${myApplication.score} out of 5</br> correct.<\p>
                     <button class="button" id='retakeQuizButton'>Retake Quiz</button>
                 <\div>
             `);
@@ -146,13 +155,13 @@ function nextQuestionPath(){
 function restartQuiz(){
     $('.sections').on('click', '#retakeQuizButton', (function(){
         $('.final').remove();
-        i=0;
-        score=0;
-        qNum=1;
-        $('#q-span').text(`Q${qNum}`);  
-        $('#score-span').text(`${score} of 5 pts`);
-        $('#currentQ').text(`Question ${qNum}`);
-        $('#currentScore').text(`${score} of 5`);
+        myApplication.i=0;
+        myApplication.score=0;
+        myApplication.qNum=1;
+        $('#q-span').text(`Q${myApplication.qNum}`);  
+        $('#score-span').text(`${myApplication.score} of 5 pts`);
+        $('#currentQ').text(`Question ${myApplication.qNum}`);
+        $('#currentScore').text(`${myApplication.score} of 5`);
         loadQuestions();
         $('.scorecard1').show();
         $('aside').show();
